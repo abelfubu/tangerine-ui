@@ -1,0 +1,11 @@
+@import "../vars";
+
+$border: 1px solid $lightgrey;
+
+section {
+  display: block;
+  // border-left: $border;
+  // border-right: $border;
+  // border-bottom: $border;
+  padding: 16px;
+}

@@ -1,0 +1,11 @@
+@import "../../vars";
+
+:host-context(.orange) {
+  border-color: rgba($orange, 0.6);
+  background-color: rgba($lightgrey, 0.1);
+
+  &.input-focus {
+    box-shadow: 0 0 3px 3px rgba($orange, 0.4);
+    border-color: $orange;
+  }
+}

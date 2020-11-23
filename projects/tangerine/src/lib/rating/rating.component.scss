@@ -1,0 +1,12 @@
+svg {
+  cursor: pointer;
+  padding: 1px;
+}
+
+svg:hover {
+  transform: scale(1.1);
+}
+
+svg:active {
+  transform: scale(0.9);
+}

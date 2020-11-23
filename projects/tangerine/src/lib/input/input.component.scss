@@ -1,0 +1,35 @@
+@import "./themes/default.theme.scss";
+@import "./themes/green.theme.scss";
+@import "./themes/orange.theme.scss";
+@import "./themes/error.theme.scss";
+
+:host {
+  border-style: solid;
+  border-width: 1px;
+  padding: 8px 12px;
+  border-radius: 3px;
+  transition: border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+:host(.input-focus) {
+  border-width: 1px;
+  border-style: solid;
+}
+
+:host::ng-deep input {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  margin: 0;
+  font-size: 1rem;
+}
+
+:host::ng-deep p {
+  padding: 0;
+  margin: 0;
+}

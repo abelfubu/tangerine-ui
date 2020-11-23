@@ -1,0 +1,13 @@
+:host {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #23232344;
+  top: 0;
+  left: 0;
+
+  &::ng-deep tng-card {
+    background-color: #fff;
+  }
+}

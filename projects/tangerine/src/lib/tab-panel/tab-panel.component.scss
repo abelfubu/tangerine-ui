@@ -1,0 +1,28 @@
+@import "../vars";
+
+$border: 1px solid $lightgrey;
+$active-border: 3px solid $blue;
+
+:host {
+  display: block;
+  border: $border;
+  border-radius: 3px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+  }
+
+  li {
+    padding: 18px 16px 12px;
+    min-width: 92px;
+    cursor: pointer;
+    border-bottom: $border;
+
+    &.selected {
+      border-bottom: $active-border;
+    }
+  }
+}
