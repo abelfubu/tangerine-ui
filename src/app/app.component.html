@@ -11,7 +11,7 @@
       <i class="far fa-user"></i>
     </tng-input>
     <p></p>
-    <tng-input green [ngClass]="checkErrors(form.controls.email)">
+    <tng-input [ngClass]="checkErrors(form.controls.email)">
       <input type="email" formControlName="email" placeholder="Email" />
       <i class="far fa-envelope"></i>
     </tng-input>
@@ -28,16 +28,45 @@
   </form>
 </tng-card>
 
-<tng-tab-panel>
-  <tng-tab title="Tab1">
-    <h1>Hello</h1>
-  </tng-tab>
-  <tng-tab title="Tab2">
-    <h1>Good bye</h1>
-  </tng-tab>
-</tng-tab-panel>
+<tng-card>
+  <tng-tab-panel>
+    <tng-tab title="Tab1">
+      <h1>Hello</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit,
+        unde nihil?
+      </p>
+    </tng-tab>
+    <tng-tab title="Tab2">
+      <h1>Good bye</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore minus
+        molestias ipsam maxime.
+      </p>
+    </tng-tab>
+    <tng-tab title="Tab3">
+      <h1>Esto es tab 3</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi est at
+        voluptas.
+      </p>
+    </tng-tab>
+  </tng-tab-panel>
+</tng-card>
 
 <input type="color" (input)="setColor($event.target.value)" />
-<h1 id="color">COLOR</h1>
+<div id="color"><h1>COLOR</h1></div>
 
-<tng-modal><h1>Modal</h1></tng-modal>
+<ng-template #authTemplate>
+  <h1>Authentication modal</h1>
+  <tng-button (click)="modal.close()">Thanks!</tng-button>
+</ng-template>
+
+<tng-modal #modal *openModal="[click, click2]">
+  <i class="fa fa-times"></i>
+  <h1>Modal</h1>
+  <tng-button (click)="modal.close()">Thanks!</tng-button>
+</tng-modal>
+
+<button #click>CLICK ME!</button>
+<button #click2>CLICK ME2!</button>

@@ -38,6 +38,6 @@ export class AppComponent {
   }
 
   setColor(color: string): void {
-    document.documentElement.style.setProperty('--green', color);
+    document.documentElement.style.setProperty('--my-color', color);
   }
 }

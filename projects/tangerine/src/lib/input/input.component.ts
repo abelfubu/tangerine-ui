@@ -7,7 +7,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { TangerineBase } from '../core/TangerineBase';
-import { InputRefDirective } from '../directives/input-ref.directive';
+import { InputRefDirective } from './input-ref.directive';
 
 const INPUT_HOST_ATTRIBUTES = ['blue', 'green', 'error'];
 

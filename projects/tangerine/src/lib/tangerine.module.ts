@@ -1,19 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RatingComponent } from './rating/rating.component';
-import { EditableDirective } from './directives/editable.directive';
 import { InputComponent } from './input/input.component';
-import { InputRefDirective } from './directives/input-ref.directive';
+import { InputRefDirective } from './input/input-ref.directive';
 import { ModalComponent } from './modal/modal.component';
 import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
 import { TabPanelComponent } from './tab-panel/tab-panel.component';
 import { TabComponent } from './tab/tab.component';
+import { OpenModalDirective } from './modal/open-modal.directive';
+import { ModalService } from './modal/modal.service';
+import { CloseModalDirective } from './modal/close-modal.directive';
 
 @NgModule({
   declarations: [
     RatingComponent,
-    EditableDirective,
     InputComponent,
     InputRefDirective,
     ModalComponent,
@@ -21,11 +22,12 @@ import { TabComponent } from './tab/tab.component';
     CardComponent,
     TabPanelComponent,
     TabComponent,
+    OpenModalDirective,
+    CloseModalDirective,
   ],
   imports: [CommonModule],
   exports: [
     RatingComponent,
-    EditableDirective,
     InputComponent,
     InputRefDirective,
     ModalComponent,
@@ -33,6 +35,15 @@ import { TabComponent } from './tab/tab.component';
     CardComponent,
     TabPanelComponent,
     TabComponent,
+    OpenModalDirective,
+    CloseModalDirective,
   ],
 })
-export class TangerineModule {}
+export class TangerineModule {
+  static forRoot(): ModuleWithProviders<TangerineModule> {
+    return {
+      ngModule: TangerineModule,
+      providers: [ModalService],
+    };
+  }
+}

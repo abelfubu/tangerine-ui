@@ -1,3 +1,14 @@
-<tng-card>
-  <ng-content></ng-content>
-</tng-card>
+<div class="overlay" (click)="closeModal()">
+  <tng-card (click)="cancelClick($event)">
+    <ng-content select="i"></ng-content>
+    <!-- If there is a template projection through the body input  -->
+    <ng-container *ngIf="body; else projectContent">
+      <ng-container *ngTemplateOutlet="body"></ng-container>
+    </ng-container>
+
+    <!-- When there is not a template projection -->
+    <ng-template #projectContent>
+      <ng-content></ng-content>
+    </ng-template>
+  </tng-card>
+</div>

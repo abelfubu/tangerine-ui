@@ -6,7 +6,7 @@ $active-border: 3px solid $blue;
 :host {
   display: block;
   border: $border;
-  border-radius: 3px;
+  border-radius: $border-radius;
 
   ul {
     margin: 0;
@@ -16,13 +16,16 @@ $active-border: 3px solid $blue;
   }
 
   li {
-    padding: 18px 16px 12px;
+    transition: border-color 200ms ease-in-out,
+      background-color 200ms ease-in-out;
+    padding: 18px 22px 12px;
     min-width: 92px;
     cursor: pointer;
     border-bottom: $border;
 
     &.selected {
       border-bottom: $active-border;
+      background-color: lighten($blue, 33);
     }
   }
 }
