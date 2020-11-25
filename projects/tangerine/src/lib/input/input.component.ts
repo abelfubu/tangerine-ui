@@ -4,16 +4,17 @@ import {
   ContentChild,
   ElementRef,
   HostBinding,
+  Input,
   OnInit,
 } from '@angular/core';
 import { TangerineBase } from '../core/TangerineBase';
 import { InputRefDirective } from './input-ref.directive';
 
-const INPUT_HOST_ATTRIBUTES = ['blue', 'green', 'error'];
+const INPUT_HOST_ATTRIBUTES = ['blue', 'green', 'error', 'orange'];
 
 @Component({
   selector: 'tng-input',
-  template: `<ng-content></ng-content> <ng-content></ng-content>`,
+  templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
 })
 export class InputComponent
@@ -21,6 +22,9 @@ export class InputComponent
   implements OnInit, AfterContentInit {
   @ContentChild(InputRefDirective, { static: true })
   input: InputRefDirective;
+
+  @Input()
+  label: string;
 
   constructor(private elementRef: ElementRef) {
     super();

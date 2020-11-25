@@ -2,6 +2,7 @@ export class TangerineBase {
   addAttributeClasses(nativeElement: HTMLElement, attributes: string[]): void {
     for (const attr of attributes) {
       if (this.hasHostAttributes(nativeElement, attr)) {
+        console.log(attr, nativeElement);
         nativeElement.classList.add(attr);
       }
     }

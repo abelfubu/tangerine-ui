@@ -1,0 +1,35 @@
+@import "../vars";
+
+// Margin
+:host-context(.m1) {
+  margin: $basepx;
+}
+:host-context(.m2) {
+  margin: $basepx * 2;
+}
+:host-context(.m3) {
+  margin: $basepx * 3;
+}
+:host-context(.m4) {
+  margin: $basepx * 4;
+}
+:host-context(.m5) {
+  margin: $basepx * 5;
+}
+
+//Margin Left
+:host-context(.ml1) {
+  margin-left: $basepx;
+}
+:host-context(.ml2) {
+  margin-left: $basepx * 2;
+}
+:host-context(.ml3) {
+  margin-left: $basepx * 3;
+}
+:host-context(.ml4) {
+  margin-left: $basepx * 4;
+}
+:host-context(.ml5) {
+  margin-left: $basepx * 5;
+}

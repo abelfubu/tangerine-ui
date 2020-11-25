@@ -1,6 +1,7 @@
 <tng-card>
   <form [formGroup]="form" (ngSubmit)="onSubmit()" class="default">
     <h1>Form</h1>
+
     <tng-input [ngClass]="checkErrors(form.controls.username)">
       <input
         type="text"
@@ -10,6 +11,7 @@
       />
       <i class="far fa-user"></i>
     </tng-input>
+
     <p></p>
     <tng-input [ngClass]="checkErrors(form.controls.email)">
       <input type="email" formControlName="email" placeholder="Email" />
@@ -25,6 +27,7 @@
     ></tng-rating>
     <p></p>
     <tng-button> Submit </tng-button>
+    <tng-button ml3 type="button"> Cancel </tng-button>
   </form>
 </tng-card>
 

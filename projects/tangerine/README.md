@@ -1,25 +1,56 @@
 # Tangerine UI
 
-Tangerine is an angular library
+Tangerine is a UI Library for Angular, easy to implement with functional components.
 
-## Code scaffolding
+## Installation
 
 Run `npm i @abelfubu/tangerine`
 
-> Note: Don't forget to add `--project testing` or else it will be added to the default project in your `angular.json` file.
+## Angular config
 
-## Build
+To start using the tangerine UI library just import the module in the main app.module
 
-Run `ng build testing` to build the project. The build artifacts will be stored in the `dist/` directory.
+```typescript
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-## Publishing
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { ReactiveFormsModule } from "@angular/forms";
+// Import Tangerine module
+import { TangerineModule } from "projects/tangerine/src/public-api";
 
-After building your library with `ng build testing`, go to the dist folder `cd dist/testing` and run `npm publish`.
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    // Configure with the forRoot() method
+    TangerineModule.forRoot(),
+    ReactiveFormsModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
 
-## Running unit tests
+## Input component
 
-Run `ng test testing` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Just wrap a normal html input with the <tng-input> component, you can add any icon, be it a svg icon, font-awesone or material icon inside the wraping element.
 
-## Further help
+The component accepts a label property
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```html
+<tng-input [ngClass]="checkErrors(form.controls.username)">
+  <input
+    type="text"
+    name="username"
+    formControlName="username"
+    placeholder="Name"
+  />
+  <i class="far fa-user"></i>
+</tng-input>
+```
+
+![Input Element]()

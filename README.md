@@ -1,27 +1,56 @@
-# Live
+# Tangerine UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Tangerine is a UI Library for Angular, easy to implement with functional components.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm i @abelfubu/tangerine`
 
-## Code scaffolding
+## Angular config
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To start using the tangerine UI library just import the module in the main app.module
 
-## Build
+```typescript
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { ReactiveFormsModule } from "@angular/forms";
+// Import Tangerine module
+import { TangerineModule } from "projects/tangerine/src/public-api";
 
-## Running unit tests
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    // Configure with the forRoot() method
+    TangerineModule.forRoot(),
+    ReactiveFormsModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Input component
 
-## Running end-to-end tests
+Just wrap a normal html input with the <tng-input> component, you can add any icon, be it a svg icon, font-awesone or material icon inside the wraping element.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+The component accepts a label property
 
-## Further help
+```html
+<tng-input [ngClass]="checkErrors(form.controls.username)">
+  <input
+    type="text"
+    name="username"
+    formControlName="username"
+    placeholder="Name"
+  />
+  <i class="far fa-user"></i>
+</tng-input>
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Input Element]()

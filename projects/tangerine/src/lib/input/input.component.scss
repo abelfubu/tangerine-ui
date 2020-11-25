@@ -4,7 +4,8 @@
 @import "./themes/orange.theme.scss";
 @import "./themes/error.theme.scss";
 
-:host {
+.input {
+  margin-top: 8px;
   border-style: solid;
   border-width: 1px;
   padding: 8px 12px;
@@ -17,8 +18,10 @@
 }
 
 :host(.input-focus) {
-  border-width: 1px;
-  border-style: solid;
+  &.input {
+    border-width: 1px;
+    border-style: solid;
+  }
 }
 
 :host::ng-deep input {

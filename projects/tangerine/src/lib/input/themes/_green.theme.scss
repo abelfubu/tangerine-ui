@@ -1,15 +1,17 @@
 @import "../../vars";
 
 :host-context(.green) {
-  border-color: rgba($green, 0.6);
-  background-color: rgba($lightgrey, 0.1);
+  .input {
+    border-color: rgba($green, 0.6);
+    background-color: rgba($lightgrey, 0.1);
+  }
 
-  &.input-focus {
+  &.input-focus .input {
     box-shadow: 0 0 3px 3px rgba($green, 0.4);
     border-color: $green;
   }
 
-  &::ng-deep i {
+  &::ng-deep .input i {
     color: darken($green, 20);
   }
 }
