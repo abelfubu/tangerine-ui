@@ -11,6 +11,7 @@ import { TabComponent } from './tab/tab.component';
 import { OpenModalDirective } from './modal/open-modal.directive';
 import { ModalService } from './modal/modal.service';
 import { CloseModalDirective } from './modal/close-modal.directive';
+import { WavesDirective } from './waves/waves.directive';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CloseModalDirective } from './modal/close-modal.directive';
     TabComponent,
     OpenModalDirective,
     CloseModalDirective,
+    WavesDirective,
   ],
   imports: [CommonModule],
   exports: [
@@ -37,6 +39,7 @@ import { CloseModalDirective } from './modal/close-modal.directive';
     TabComponent,
     OpenModalDirective,
     CloseModalDirective,
+    WavesDirective,
   ],
 })
 export class TangerineModule {

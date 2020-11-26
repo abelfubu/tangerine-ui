@@ -53,4 +53,32 @@ The component accepts a label property
 </tng-input>
 ```
 
-![Input Element]()
+![Input Component](https://raw.githubusercontent.com/abelfubu/tangerine-ui/master/src/assets/input.png)
+
+## Rating
+
+Add the <tng-rating> component, it's possible to configure the amount of stars you want it to have and the currentRating, When the editable flag is on the component emits values so that it can be listened to.
+
+#### Attributes
+
+- color, by default 'goldenrod'
+- stars, the number of stars to render
+- size, the size in px of each star
+- currentRating, the current rating...
+- editable, flag to make the component editable
+- rainbow, multiple colors behaviour
+- (newRating), event to listen to when the stars are clicked
+
+```html
+<tng-rating
+  currentRating="3"
+  color="#232323"
+  stars="10"
+  size="42"
+  editable
+  rainbow
+  (newRating)="getRating($event)"
+></tng-rating>
+```
+
+![Rating Component](https://raw.githubusercontent.com/abelfubu/tangerine-ui/master/src/assets/rating.png)

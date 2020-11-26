@@ -13,16 +13,24 @@ import { ModalService } from './modal.service';
   selector: '[openModal]',
 })
 export class OpenModalDirective implements OnInit, OnDestroy {
-  elements: HTMLBaseElement[];
+  elements: any[];
   listeners: (() => void)[] = [];
 
   @Input() set openModal(els: any) {
     this.elements = els.length ? els : [els];
 
     this.elements.forEach((el) => {
-      this.listeners.push(
-        this.renderer.listen(el, 'click', () => this.clickHandler())
-      );
+      if (!(el instanceof HTMLButtonElement)) {
+        this.listeners.push(
+          this.renderer.listen(el.elementRef.nativeElement, 'click', () =>
+            this.clickHandler()
+          )
+        );
+      } else {
+        this.listeners.push(
+          this.renderer.listen(el, 'click', () => this.clickHandler())
+        );
+      }
     });
   }
 

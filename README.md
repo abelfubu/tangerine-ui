@@ -53,4 +53,4 @@ The component accepts a label property
 </tng-input>
 ```
 
-![Input Element]('https://raw.githubusercontent.com/abelfubu/tangerine-ui/master/src/assets/input.png)
+![Input Element](https://raw.githubusercontent.com/abelfubu/tangerine-ui/master/src/assets/input.png)

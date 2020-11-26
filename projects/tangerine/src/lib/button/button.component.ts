@@ -1,6 +1,14 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  ContentChildren,
+  ElementRef,
+  HostBinding,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { TangerineBase } from '../core/TangerineBase';
 import { utilityAtrr } from '../core/UtilityAttributes';
+import { WavesDirective } from '../waves/waves.directive';
 
 @Component({
   selector: 'tng-button',
@@ -12,6 +20,7 @@ import { utilityAtrr } from '../core/UtilityAttributes';
 })
 export class ButtonComponent extends TangerineBase implements OnInit {
   @Input() type = 'submit';
+
   constructor(private elementRef: ElementRef) {
     super();
     this.addAttributeClasses(this.elementRef.nativeElement, utilityAtrr);
