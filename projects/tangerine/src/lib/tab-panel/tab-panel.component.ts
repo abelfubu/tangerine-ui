@@ -4,8 +4,8 @@ import {
   ContentChildren,
   OnInit,
   QueryList,
-} from '@angular/core';
-import { TabComponent } from '../tab/tab.component';
+} from '@angular/core'
+import { TabComponent } from '../tab/tab.component'
 
 @Component({
   selector: 'tng-tab-panel',
@@ -14,21 +14,21 @@ import { TabComponent } from '../tab/tab.component';
 })
 export class TabPanelComponent implements OnInit, AfterContentInit {
   @ContentChildren(TabComponent)
-  tabs: QueryList<TabComponent>;
+  tabs: QueryList<TabComponent>
 
   constructor() {}
 
   ngOnInit(): void {}
 
   ngAfterContentInit(): void {
-    const selectedTab = this.tabs.find((tab) => tab.selected);
+    const selectedTab = this.tabs.find((tab) => tab.selected)
     if (!selectedTab && this.tabs.first) {
-      this.tabs.first.selected = true;
+      this.tabs.first.selected = true
     }
   }
 
   selectTab(tab: TabComponent): void {
-    this.tabs.forEach((item) => (item.selected = false));
-    tab.selected = true;
+    this.tabs.forEach((item) => (item.selected = false))
+    tab.selected = true
   }
 }

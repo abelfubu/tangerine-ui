@@ -5,10 +5,10 @@ import {
   HostBinding,
   Input,
   OnInit,
-} from '@angular/core';
-import { TangerineBase } from '../core/TangerineBase';
-import { utilityAtrr } from '../core/UtilityAttributes';
-import { WavesDirective } from '../waves/waves.directive';
+} from '@angular/core'
+import { TangerineBase } from '../core/TangerineBase'
+import { utilityAtrr } from '../core/UtilityAttributes'
+import { WavesDirective } from '../waves/waves.directive'
 
 @Component({
   selector: 'tng-button',
@@ -19,11 +19,11 @@ import { WavesDirective } from '../waves/waves.directive';
   styleUrls: ['./button.component.scss', '../core/_utility.classes.scss'],
 })
 export class ButtonComponent extends TangerineBase implements OnInit {
-  @Input() type = 'submit';
+  @Input() type = 'submit'
 
   constructor(private elementRef: ElementRef) {
-    super();
-    this.addAttributeClasses(this.elementRef.nativeElement, utilityAtrr);
+    super()
+    this.addAttributeClasses(this.elementRef.nativeElement, utilityAtrr)
   }
 
   ngOnInit(): void {}

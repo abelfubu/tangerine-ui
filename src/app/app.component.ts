@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common'
+import { Component, Inject } from '@angular/core'
 import {
   AbstractControl,
   FormBuilder,
   FormGroup,
   Validators,
-} from '@angular/forms';
+} from '@angular/forms'
 
 @Component({
   selector: 'app-root',
@@ -12,32 +13,35 @@ import {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'live';
-  form: FormGroup;
+  title = 'live'
+  form: FormGroup
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    @Inject(DOCUMENT) private readonly document: Document,
+    fb: FormBuilder,
+  ) {
     this.form = fb.group({
       username: ['', Validators.required],
       email: ['', Validators.required],
       rating: [''],
-    });
+    })
   }
 
   getRating(rating: number): void {
-    this.form.controls.rating.setValue(rating);
+    this.form.controls.rating.setValue(rating)
   }
 
   onSubmit(): void {
-    console.log(this.form.value);
+    console.log(this.form.value)
   }
 
   checkErrors(control: AbstractControl): string {
     if (control.touched && control.errors) {
-      return 'error';
+      return 'error'
     }
   }
 
   setColor(color: string): void {
-    document.documentElement.style.setProperty('--my-color', color);
+    this.document.documentElement.style.setProperty('--my-color', color)
   }
 }

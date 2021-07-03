@@ -1,5 +1,5 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
-import { TangerineBase } from '../core/TangerineBase';
+import { Component, ElementRef, Input, OnInit } from '@angular/core'
+import { TangerineBase } from '../core/TangerineBase'
 
 @Component({
   selector: 'tng-tab',
@@ -7,13 +7,13 @@ import { TangerineBase } from '../core/TangerineBase';
   styleUrls: ['./tab.component.scss'],
 })
 export class TabComponent extends TangerineBase implements OnInit {
-  @Input() title: string;
-  @Input() selected = false;
+  @Input() title: string
+  @Input() selected = false
   constructor(private elementRef: ElementRef) {
-    super();
+    super()
   }
 
   ngOnInit(): void {
-    this.addAttributeBooleans(this.elementRef.nativeElement, ['selected']);
+    this.addAttributeBooleans(this.elementRef.nativeElement, ['selected'])
   }
 }

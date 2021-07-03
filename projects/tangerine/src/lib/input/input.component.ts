@@ -6,11 +6,11 @@ import {
   HostBinding,
   Input,
   OnInit,
-} from '@angular/core';
-import { TangerineBase } from '../core/TangerineBase';
-import { InputRefDirective } from './input-ref.directive';
+} from '@angular/core'
+import { TangerineBase } from '../core/TangerineBase'
+import { InputRefDirective } from './input-ref.directive'
 
-const INPUT_HOST_ATTRIBUTES = ['blue', 'green', 'error', 'orange'];
+const INPUT_HOST_ATTRIBUTES = ['blue', 'green', 'error', 'orange']
 
 @Component({
   selector: 'tng-input',
@@ -19,30 +19,31 @@ const INPUT_HOST_ATTRIBUTES = ['blue', 'green', 'error', 'orange'];
 })
 export class InputComponent
   extends TangerineBase
-  implements OnInit, AfterContentInit {
+  implements OnInit, AfterContentInit
+{
   @ContentChild(InputRefDirective, { static: true })
-  input: InputRefDirective;
+  input: InputRefDirective
 
   @Input()
-  label: string;
+  label: string
 
   constructor(private elementRef: ElementRef) {
-    super();
+    super()
     this.addAttributeClasses(
       this.elementRef.nativeElement,
-      INPUT_HOST_ATTRIBUTES
-    );
+      INPUT_HOST_ATTRIBUTES,
+    )
   }
 
   ngAfterContentInit(): void {
     if (!this.input) {
-      console.error('The component needs an input to work properly');
+      console.error('The component needs an input to work properly')
     }
   }
 
   @HostBinding('class.input-focus')
   get isInputFoused(): boolean {
-    return this.input ? this.input.focus : false;
+    return this.input ? this.input.focus : false
   }
 
   ngOnInit(): void {}

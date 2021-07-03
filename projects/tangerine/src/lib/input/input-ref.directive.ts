@@ -1,20 +1,20 @@
-import { Directive, HostListener } from '@angular/core';
+import { Directive, HostListener } from '@angular/core'
 
 @Directive({
   selector: '[InputRef input]',
 })
 export class InputRefDirective {
-  public focus = false;
+  public focus = false
 
   constructor() {}
 
   @HostListener('focus')
   onFocus(): void {
-    this.focus = true;
+    this.focus = true
   }
 
   @HostListener('blur')
   onBlur(): void {
-    this.focus = false;
+    this.focus = false
   }
 }

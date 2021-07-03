@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Injectable } from '@angular/core'
+import { Observable, Subject } from 'rxjs'
 
 @Injectable({
   providedIn: 'root',
 })
 export class ModalService {
-  private subject = new Subject();
-  close$: Observable<any> = this.subject.asObservable();
+  private subject = new Subject()
+  close$: Observable<any> = this.subject.asObservable()
 
   close(): void {
-    this.subject.next();
+    this.subject.next()
   }
 }

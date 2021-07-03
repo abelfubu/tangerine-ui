@@ -1,5 +1,5 @@
-@import "../vars";
-@import "./themes/default.theme";
+@import '../vars';
+@import './themes/default.theme';
 
 :host {
   display: inline-block;
@@ -25,11 +25,11 @@ button {
 .waves {
   position: absolute;
   border-radius: 50%;
-  background-color: #23232350;
+  background-color: #fff3;
   width: 100px;
   height: 100px;
   margin-left: -50px;
-  animation: ripple 1000ms;
+  animation: ripple 500ms;
   opacity: 0;
   z-index: 100;
 }

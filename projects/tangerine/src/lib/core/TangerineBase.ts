@@ -2,8 +2,8 @@ export class TangerineBase {
   addAttributeClasses(nativeElement: HTMLElement, attributes: string[]): void {
     for (const attr of attributes) {
       if (this.hasHostAttributes(nativeElement, attr)) {
-        console.log(attr, nativeElement);
-        nativeElement.classList.add(attr);
+        console.log(attr, nativeElement)
+        nativeElement.classList.add(attr)
       }
     }
   }
@@ -11,7 +11,7 @@ export class TangerineBase {
   addAttributeBooleans(nativeElement: HTMLElement, attributes: string[]): void {
     for (const attr of attributes) {
       if (this.hasHostAttributes(nativeElement, attr)) {
-        this[attr] = true;
+        this[attr] = true
       }
     }
   }
@@ -20,8 +20,6 @@ export class TangerineBase {
     nativeElement: HTMLElement,
     ...attributes: string[]
   ): boolean {
-    return attributes.some((attribute) =>
-      nativeElement.hasAttribute(attribute)
-    );
+    return attributes.some((attribute) => nativeElement.hasAttribute(attribute))
   }
 }

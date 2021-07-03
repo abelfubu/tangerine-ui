@@ -4,10 +4,10 @@ import {
   Input,
   OnInit,
   TemplateRef,
-} from '@angular/core';
-import { EventManager } from '@angular/platform-browser';
-import { CloseModalDirective } from './close-modal.directive';
-import { ModalService } from './modal.service';
+} from '@angular/core'
+import { EventManager } from '@angular/platform-browser'
+import { CloseModalDirective } from './close-modal.directive'
+import { ModalService } from './modal.service'
 
 @Component({
   selector: 'tng-modal',
@@ -16,38 +16,38 @@ import { ModalService } from './modal.service';
 })
 export class ModalComponent implements OnInit {
   @Input()
-  body: TemplateRef<any>;
+  body: TemplateRef<any>
   @Input()
-  closeOnBackdropClick = true;
+  closeOnBackdropClick = true
 
   @ContentChild(CloseModalDirective, { static: true })
-  icon: CloseModalDirective;
+  icon: CloseModalDirective
 
   constructor(
     private modalService: ModalService,
-    private eventManager: EventManager
+    private eventManager: EventManager,
   ) {}
 
   ngOnInit(): void {
     this.eventManager.addGlobalEventListener(
       'window',
       'keyup.esc',
-      () => this.closeModal
-    );
+      () => this.closeModal,
+    )
   }
 
   closeModal(): void {
     if (this.closeOnBackdropClick) {
-      this.modalService.close();
+      this.modalService.close()
     }
   }
 
   close(): void {
-    this.modalService.close();
+    this.modalService.close()
   }
 
   cancelClick(event: MouseEvent): void {
-    event.preventDefault();
-    event.stopPropagation();
+    event.preventDefault()
+    event.stopPropagation()
   }
 }

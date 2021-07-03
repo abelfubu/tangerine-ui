@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core'
 
 @Directive({
   selector: '[waves button]',
@@ -8,14 +8,14 @@ export class WavesDirective {
 
   @HostListener('click', ['$event'])
   createWaveEffect(event: any): void {
-    const { layerX, layerY } = event;
-    const span = this.renderer.createElement('span');
-    this.renderer.addClass(span, 'waves');
-    this.renderer.appendChild(this.elementRef.nativeElement, span);
-    this.renderer.setStyle(span, 'rigth', layerY + 'px');
-    this.renderer.setStyle(span, 'left', layerX + 'px');
+    const { layerX, layerY } = event
+    const span = this.renderer.createElement('span')
+    this.renderer.addClass(span, 'waves')
+    this.renderer.appendChild(this.elementRef.nativeElement, span)
+    this.renderer.setStyle(span, 'rigth', layerY + 'px')
+    this.renderer.setStyle(span, 'left', layerX + 'px')
     setTimeout(() => {
-      this.renderer.removeChild(this.elementRef.nativeElement, span);
-    }, 300);
+      this.renderer.removeChild(this.elementRef.nativeElement, span)
+    }, 300)
   }
 }

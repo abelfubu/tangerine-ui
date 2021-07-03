@@ -1,3 +1,4 @@
+<tng-cursor hoverAttr="tng-button, li"></tng-cursor>
 <tng-card>
   <form [formGroup]="form" (ngSubmit)="onSubmit()" class="default">
     <h1>Form</h1>
@@ -20,9 +21,9 @@
     <p></p>
 
     <tng-rating
-      currentRating="3"
-      editable
-      rainbow
+      [currentRating]="3"
+      [editable]="true"
+      [rainbow]="true"
       (newRating)="getRating($event)"
     ></tng-rating>
     <p></p>
@@ -57,15 +58,14 @@
   </tng-tab-panel>
 </tng-card>
 
-<input type="color" (input)="setColor($event.target.value)" />
+<input type="color" (input)="setColor($any($event.target).value)" />
 <div id="color"><h1>COLOR</h1></div>
 
-<ng-template #authTemplate>
-  <h1>Authentication modal</h1>
-  <tng-button (click)="modal.close()">Thanks!</tng-button>
-</ng-template>
-
 <tng-modal #modal *openModal="[click, click2]">
+  <ng-template #authTemplate>
+    <h1>Authentication modal</h1>
+    <tng-button (click)="modal.close()">Thanks!</tng-button>
+  </ng-template>
   <i class="fa fa-times"></i>
   <h1>Modal</h1>
   <tng-button (click)="modal.close()">Thanks!</tng-button>

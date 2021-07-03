@@ -21,5 +21,8 @@
         "dist/testing"
       ]
     }
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": true
   }
 }

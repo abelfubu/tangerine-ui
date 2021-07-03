@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { TangerineBase } from '../core/TangerineBase';
+import { Component, OnInit } from '@angular/core'
+import { TangerineBase } from '../core/TangerineBase'
 
 @Component({
   selector: 'tng-card',
@@ -8,7 +8,7 @@ import { TangerineBase } from '../core/TangerineBase';
 })
 export class CardComponent extends TangerineBase implements OnInit {
   constructor() {
-    super();
+    super()
   }
 
   ngOnInit(): void {}

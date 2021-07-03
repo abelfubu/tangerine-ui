@@ -1,0 +1,23 @@
+svg {
+  opacity: 0.3;
+}
+
+.cursor {
+  display: none;
+}
+
+@media (any-pointer: fine) {
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .cursor__inner {
+    fill: transparent;
+    mix-blend-mode: lighten;
+    stroke-width: 1px;
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects /**/*", "scripts /**/*", "dist /**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json", "e2e/tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "prettier"
+      ],
+      "env": {
+        "jasmine": true
+      },
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "no-console": "error",
+        "no-alert": "error",
+        "no-debugger": "error",
+        "lines-between-class-members": [
+          "error",
+          "always",
+          { "exceptAfterSingleLine": true }
+        ],
+        "complexity": ["error", 20],
+        "no-unsafe-optional-chaining": "error",
+        "array-callback-return": "error",
+        "consistent-return": "error",
+        "no-magic-numbers": [
+          "warn",
+          { "ignore": [0, 1], "ignoreArrayIndexes": true }
+        ],
+        "no-return-assign": ["error", "always"],
+        "no-sequences": "error",
+        "prefer-spread": "warn",
+        "max-lines": [
+          "error",
+          {
+            "max": 400,
+            "skipBlankLines": true,
+            "skipComments": true
+          }
+        ],
+        "max-lines-per-function": [
+          "error",
+          { "max": 50, "skipBlankLines": true, "skipComments": true }
+        ],
+        "max-params": ["error", 5],
+        "no-nested-ternary": "error",
+        "no-unneeded-ternary": "error",
+        /*
+         * ---------------------------
+         * TypeScript-EsLint rules ---
+         * ---------------------------
+         */
+        "@typescript-eslint/ban-types": "error",
+        "@typescript-eslint/explicit-module-boundary-types": "error",
+        "@typescript-eslint/explicit-function-return-type": [
+          "warn",
+          {
+            "allowExpressions": true,
+            "allowTypedFunctionExpressions": true
+          }
+        ],
+        "@typescript-eslint/consistent-type-imports": "off",
+        "@typescript-eslint/consistent-indexed-object-style": [
+          "warn",
+          "record"
+        ],
+        // note you must disable the base rule as it can report incorrect errors
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        // note you must disable the base rule as it can report incorrect errors
+        "no-unused-expressions": "off",
+        "@typescript-eslint/no-unused-expressions": "error",
+        // note you must disable the base rule as it can report incorrect errors
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": "error",
+        // note you must disable the base rule as it can report incorrect errors
+        "no-duplicate-imports": "off",
+        "@typescript-eslint/no-duplicate-imports": "error",
+        "@typescript-eslint/no-unnecessary-type-assertion": "error",
+        "@typescript-eslint/no-inferrable-types": "error",
+        "@typescript-eslint/no-unnecessary-condition": "error",
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-useless-constructor": "error",
+        "@typescript-eslint/no-non-null-assertion": "warn", // only warn, it could be useful sometimes
+        "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
+        "@typescript-eslint/prefer-ts-expect-error": "error",
+        "@typescript-eslint/prefer-string-starts-ends-with": "warn",
+        "@typescript-eslint/prefer-readonly": "error",
+        "@typescript-eslint/prefer-optional-chain": "warn",
+        "@typescript-eslint/prefer-nullish-coalescing": "warn",
+        "@typescript-eslint/prefer-includes": "warn",
+        "@typescript-eslint/prefer-as-const": "warn",
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            // force the order of class members
+            "classes": [
+              "signature",
+              "field",
+              "constructor",
+              "public-static-method",
+              "public-decorated-method",
+              "public-abstract-method",
+              "public-instance-method",
+              "protected-static-method",
+              "protected-decorated-method",
+              "protected-instance-method",
+              "protected-abstract-method",
+              "private-static-method",
+              "private-decorated-method",
+              "private-instance-method",
+              "private-abstract-method"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    }
+  ]
+}
