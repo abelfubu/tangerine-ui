@@ -1,21 +1,21 @@
 // const imagesLoaded = require('imagesloaded');
 
 // Map number x from range [a, b] to [c, d]
-const map = (x: any, a: any, b: any, c: any, d: any) =>
+const map = (x: number, a: number, b: number, c: number, d: number): number =>
   ((x - a) * (d - c)) / (b - a) + c
 
 // Linear interpolation
-const lerp = (a: any, b: any, n: any) => (1 - n) * a + n * b
+const lerp = (a: number, b: number, n: number): number => (1 - n) * a + n * b
 
-const calcWinsize = () => {
+const calcWinsize = (): { width: number; height: number } => {
   return { width: window.innerWidth, height: window.innerHeight }
 }
 
 // Gets the mouse position
-const getMousePos = (e: MouseEvent) => {
+const getMousePos = (e: MouseEvent): { x: number; y: number } => {
   let posx = 0
   let posy = 0
-  if (!e) e = window.event as MouseEvent
+  e = window.event as MouseEvent
   if (e.pageX || e.pageY) {
     posx = e.pageX
     posy = e.pageY
@@ -29,7 +29,8 @@ const getMousePos = (e: MouseEvent) => {
   return { x: posx, y: posy }
 }
 
-const randomFloat = (min: number, max: number) =>
+const randomFloat = (min: number, max: number): number =>
+  // eslint-disable-next-line no-magic-numbers
   parseFloat(Math.min(min + Math.random() * (max - min), max).toFixed(2))
 
 // // Preload images

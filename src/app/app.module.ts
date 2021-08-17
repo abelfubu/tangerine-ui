@@ -3,10 +3,7 @@ import { NgModule } from '@angular/core'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import {
-  CursorModule,
-  TangerineModule,
-} from 'projects/tangerine/src/public-api'
+import { TangerineModule } from 'projects/tangerine/src/public-api'
 import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
@@ -16,7 +13,6 @@ import { ReactiveFormsModule } from '@angular/forms'
     AppRoutingModule,
     TangerineModule.forRoot(),
     ReactiveFormsModule,
-    CursorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

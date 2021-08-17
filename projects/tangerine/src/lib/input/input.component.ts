@@ -5,7 +5,6 @@ import {
   ElementRef,
   HostBinding,
   Input,
-  OnInit,
 } from '@angular/core'
 import { TangerineBase } from '../core/TangerineBase'
 import { InputRefDirective } from './input-ref.directive'
@@ -17,17 +16,14 @@ const INPUT_HOST_ATTRIBUTES = ['blue', 'green', 'error', 'orange']
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
 })
-export class InputComponent
-  extends TangerineBase
-  implements OnInit, AfterContentInit
-{
+export class InputComponent extends TangerineBase implements AfterContentInit {
   @ContentChild(InputRefDirective, { static: true })
-  input: InputRefDirective
+  input!: InputRefDirective
 
   @Input()
   label: string
 
-  constructor(private elementRef: ElementRef) {
+  constructor(private readonly elementRef: ElementRef) {
     super()
     this.addAttributeClasses(
       this.elementRef.nativeElement,
@@ -36,15 +32,14 @@ export class InputComponent
   }
 
   ngAfterContentInit(): void {
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!this.input) {
-      console.error('The component needs an input to work properly')
+      throw new Error('The component needs an input to work properly')
     }
   }
 
   @HostBinding('class.input-focus')
   get isInputFoused(): boolean {
-    return this.input ? this.input.focus : false
+    return this.input.focus
   }
-
-  ngOnInit(): void {}
 }

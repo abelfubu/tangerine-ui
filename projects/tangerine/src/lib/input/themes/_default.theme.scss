@@ -1,17 +1,20 @@
-@import "../../vars";
+@import '../../vars';
 
 :host {
   .input {
-    border-color: rgba($blue, 0.6);
-    background-color: rgba($lightgrey, 0.1);
+    border-color: var(--primary-md, $primary-md);
+    background-color: var(--primary-light, $primary-light);
     &::ng-deep i {
-      color: darken($blue, 20);
+      color: darken($primary, 20);
+    }
+
+    &::ng-deep input:-webkit-autofill {
+      box-shadow: 0 0 0px 1000px var(--primary-md, $primary-md) inset;
     }
   }
 
   &.input-focus .input {
-    box-shadow: 0 0 3px 3px rgba($blue, 0.4);
-    border-color: $blue;
-    background-color: rgba($blue, 0.1);
+    box-shadow: inset 0 0 1px 1px var(--primary-light, $primary-light);
+    background-color: var(--primary-md, $primary-md);
   }
 }

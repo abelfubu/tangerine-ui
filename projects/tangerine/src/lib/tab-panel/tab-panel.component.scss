@@ -1,11 +1,10 @@
-@import "../vars";
+@import '../vars';
 
 $border: 1px solid $lightgrey;
-$active-border: 3px solid $blue;
+$active-border: 3px solid $primary;
 
 :host {
   display: block;
-  border: $border;
   border-radius: $border-radius;
 
   ul {
@@ -21,11 +20,15 @@ $active-border: 3px solid $blue;
       background-color 200ms ease-in-out;
     padding: 18px 22px 12px;
     cursor: pointer;
-    border-bottom: $border;
+    // border-bottom: $border;
+    box-shadow: inset 0 1.5px 18px var(--primary-md, $primary-md),
+      inset 0 -1.5px 18px rgba(#fff, 0.7);
+    background-color: rgba(#000, 0.1);
 
     &.selected {
-      border-bottom: $active-border;
-      background-color: lighten($blue, 33);
+      border-bottom: var(--primary, $primary);
+      background-color: rgba(#fff, 0.2);
+      box-shadow: none;
     }
   }
   @media (max-width: 800px) {

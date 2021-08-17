@@ -1,11 +1,6 @@
 import { DOCUMENT } from '@angular/common'
 import { Component, Inject } from '@angular/core'
-import {
-  AbstractControl,
-  FormBuilder,
-  FormGroup,
-  Validators,
-} from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-root',
@@ -23,22 +18,8 @@ export class AppComponent {
     this.form = fb.group({
       username: ['', Validators.required],
       email: ['', Validators.required],
-      rating: [''],
+      rating: [1],
     })
-  }
-
-  getRating(rating: number): void {
-    this.form.controls.rating.setValue(rating)
-  }
-
-  onSubmit(): void {
-    console.log(this.form.value)
-  }
-
-  checkErrors(control: AbstractControl): string {
-    if (control.touched && control.errors) {
-      return 'error'
-    }
   }
 
   setColor(color: string): void {

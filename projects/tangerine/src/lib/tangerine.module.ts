@@ -12,7 +12,6 @@ import { OpenModalDirective } from './modal/open-modal.directive'
 import { ModalService } from './modal/modal.service'
 import { CloseModalDirective } from './modal/close-modal.directive'
 import { WavesDirective } from './waves/waves.directive'
-import { CursorModule } from './cursor/cursor.module'
 
 @NgModule({
   declarations: [
@@ -39,6 +38,7 @@ import { CursorModule } from './cursor/cursor.module'
     OpenModalDirective,
     CloseModalDirective,
     TabComponent,
+    InputRefDirective,
   ],
 })
 export class TangerineModule {

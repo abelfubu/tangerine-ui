@@ -1,6 +1,6 @@
-@import "../../vars";
+@import '../../vars';
 
-:host-context(.error) {
+:host-context(.ng-invalid.ng-touched) {
   .input {
     border-color: rgba($red, 0.6);
     background-color: rgba($red, 0.1);

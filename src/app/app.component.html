@@ -1,9 +1,8 @@
-<tng-cursor hoverAttr="tng-button, li"></tng-cursor>
 <tng-card>
-  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="default">
+  <form [formGroup]="form" class="default">
     <h1>Form</h1>
 
-    <tng-input [ngClass]="checkErrors(form.controls.username)">
+    <tng-input>
       <input
         type="text"
         name="username"
@@ -14,21 +13,23 @@
     </tng-input>
 
     <p></p>
-    <tng-input [ngClass]="checkErrors(form.controls.email)">
+    <tng-input>
       <input type="email" formControlName="email" placeholder="Email" />
       <i class="far fa-envelope"></i>
     </tng-input>
     <p></p>
 
     <tng-rating
-      [currentRating]="3"
       [editable]="true"
-      [rainbow]="true"
-      (newRating)="getRating($event)"
+      [stars]="10"
+      formControlName="rating"
     ></tng-rating>
     <p></p>
-    <tng-button> Submit </tng-button>
-    <tng-button waves ml3 type="button"> Cancel </tng-button>
+    <button tng-button color="primary" waves>
+      <i class="far fa-envelope"></i>
+      Submit
+    </button>
+    <button tng-button waves ml3 color="accent" type="button">Cancel</button>
   </form>
 </tng-card>
 
@@ -64,12 +65,12 @@
 <tng-modal #modal *openModal="[click, click2]">
   <ng-template #authTemplate>
     <h1>Authentication modal</h1>
-    <tng-button (click)="modal.close()">Thanks!</tng-button>
+    <button tng-button (click)="modal.close()">Thanks!</button>
   </ng-template>
   <i class="fa fa-times"></i>
   <h1>Modal</h1>
-  <tng-button (click)="modal.close()">Thanks!</tng-button>
+  <button tng-button (click)="modal.close()">Thanks!</button>
 </tng-modal>
 
-<tng-button #click>CLICK ME!</tng-button>
-<button #click2>CLICK ME2!</button>
+<button [disabled]="true" tng-button #click>CLICK ME!</button>
+<button tng-button ml3 #click2>CLICK ME2!</button>

@@ -1,15 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --my-color: 0, 128, 0;
-  --blue: blue;
+  --primary-light: #d1d8ec;
+  --primary-md: #b4b8c9;
+  --primary: #515869;
+  // --primary: #516953;
+  // --primary-light: #d2ecd1;
+  // --primary-md: #a9c4a8;
+  --elevation: 2px;
+  --elevation-lg: 4px;
 }
 
 * {
-  font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
   h1 {
     font-weight: 300;
   }
+}
+
+body {
+  background-color: var(--primary-light);
 }
 
 #color {

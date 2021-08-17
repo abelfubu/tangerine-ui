@@ -9,4 +9,5 @@ export const utilityAtrr = [
   'ml3',
   'ml4',
   'ml5',
+  'primary',
 ]

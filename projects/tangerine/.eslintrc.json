@@ -12,26 +12,17 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates",
-        "prettier"
+        "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "env": {
         "jasmine": true
       },
       "rules": {
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "type": "attribute",
-            "prefix": "app",
-            "style": "camelCase"
-          }
-        ],
         "@angular-eslint/component-selector": [
           "error",
           {
-            "type": "element",
-            "prefix": "app",
+            "type": ["element", "attribute"],
+            "prefix": "tng",
             "style": "kebab-case"
           }
         ],
@@ -47,10 +38,6 @@
         "no-unsafe-optional-chaining": "error",
         "array-callback-return": "error",
         "consistent-return": "error",
-        "no-magic-numbers": [
-          "warn",
-          { "ignore": [0, 1], "ignoreArrayIndexes": true }
-        ],
         "no-return-assign": ["error", "always"],
         "no-sequences": "error",
         "prefer-spread": "warn",

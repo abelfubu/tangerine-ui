@@ -1,6 +1,8 @@
 svg {
   cursor: pointer;
   padding: 1px;
+  outline: none;
+  transition: transform 0.1s;
 }
 
 svg:hover {
